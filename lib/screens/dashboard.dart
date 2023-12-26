@@ -7,6 +7,7 @@ import 'package:payquicky/components/input.dart';
 import 'package:payquicky/components/txt.dart';
 import 'package:payquicky/screens/sub/home.dart';
 import 'package:payquicky/screens/sub/services.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -16,7 +17,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  int screen = 1;
+  int screen = 2;
   Widget render(BuildContext context) {
     // Renders the screen based on the state
     switch (screen) {
@@ -36,7 +37,7 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: BG,
       body: Stack(
         children: [
-          Expanded(child: render(context)),
+          render(context),
           Align(alignment: Alignment.bottomCenter, child: BaseNav())
         ],
       ),
@@ -68,8 +69,8 @@ class _DashboardState extends State<Dashboard> {
             screen: screen,
           ),
           Btn(
-            title: "Services",
-            icon: CupertinoIcons.headphones,
+            title: "Card",
+            icon: MdiIcons.creditCard,
             onPressed: () {
               // TODO: Custom function here
               setState(() {

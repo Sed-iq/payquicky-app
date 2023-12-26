@@ -25,6 +25,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       scrollBehavior: MyScrollBehaviour(),
       title: "Payquicky",
+      theme: ThemeData(fontFamily: "Roboto"),
       home: const Dashboard(),
     );
   }

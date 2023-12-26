@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
 import 'package:payquicky/components/input.dart';
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: const BoxDecoration(
                       color: Color.fromRGBO(15, 34, 63, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                      borderRadius: BorderRadius.all(Radius.circular(50))),
                   child: Row(
                     children: [
                       CircleAvatar(
@@ -151,7 +152,7 @@ class _HomeState extends State<Home> {
                                     backgroundColor:
                                         Color.fromARGB(148, 255, 193, 7),
                                     child: Icon(
-                                      CupertinoIcons.arrow_down,
+                                      FontAwesome.arrow_up_solid,
                                       color: Colors.white,
                                       size: 20,
                                     ),
@@ -175,7 +176,7 @@ class _HomeState extends State<Home> {
                                     backgroundColor:
                                         Color.fromARGB(148, 255, 193, 7),
                                     child: Icon(
-                                      CupertinoIcons.arrow_up,
+                                      FontAwesome.arrow_down_solid,
                                       color: Colors.white,
                                       size: 20,
                                     ),
@@ -199,7 +200,7 @@ class _HomeState extends State<Home> {
                                     backgroundColor:
                                         Color.fromARGB(148, 255, 193, 7),
                                     child: Icon(
-                                      MdiIcons.creditCard,
+                                      FontAwesome.coins_solid,
                                       color: Colors.white,
                                       size: 20,
                                     ),
@@ -223,7 +224,7 @@ class _HomeState extends State<Home> {
                                     backgroundColor:
                                         Color.fromARGB(148, 255, 193, 7),
                                     child: Icon(
-                                      MdiIcons.cashMultiple,
+                                      FontAwesome.money_bills_solid,
                                       color: Colors.white,
                                       size: 20,
                                     ),
@@ -295,11 +296,21 @@ class _cryptoListState extends State<cryptoList> {
         const SizedBox(
           height: 18,
         ),
-        GestureDetector(
-            onHorizontalDragStart: (direction) {
-              print(direction);
-            },
-            child: const ItemListing())
+        ItemListing(
+          icon: MdiIcons.bitcoin,
+          price: 30599.99,
+          title: "BTC 🔥",
+        ),
+        ItemListing(
+          icon: MdiIcons.ethereum,
+          price: 1690.96,
+          title: "ETH 🔥",
+        ),
+        ItemListing(
+          icon: MdiIcons.codeString,
+          price: 30.93,
+          title: "SOL",
+        ),
       ],
     );
   }
@@ -358,12 +369,19 @@ class SelectBtn extends StatelessWidget {
 }
 
 class ItemListing extends StatelessWidget {
-  const ItemListing({super.key});
+  final IconData icon;
+  final String title;
+  final double price;
+  const ItemListing(
+      {super.key,
+      required this.price,
+      required this.title,
+      required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 18.5),
+      padding: EdgeInsets.symmetric(horizontal: 18.5, vertical: 20),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -372,7 +390,7 @@ class ItemListing extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(
-                MdiIcons.bitcoin,
+                icon,
                 color: Colors.white,
                 size: 40,
               ),
@@ -383,10 +401,29 @@ class ItemListing extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Txt(
-                    text: "BTC 🔥",
+                    text: title,
+                    // text: "BTC ",
                     size: 20,
-                  ) // TODO: Make variable gotten from server
+                    weight: FontWeight.w600,
+                  ), // TODO: Make variable gotten from server
+                  Txt(
+                    text: "\$$price",
+                    colors: Colors.grey[600],
+                  )
                 ],
+              )
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Txt(
+                text: "$price",
+                size: 20,
+              ), // TODO: Make variable gotten from server
+              Txt(
+                text: "\$$price",
+                colors: Colors.grey[600],
               )
             ],
           )
