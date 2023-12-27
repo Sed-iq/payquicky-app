@@ -18,7 +18,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  int screen = 2;
+  int screen = 1;
   Widget render(BuildContext context) {
     // Renders the screen based on the state
     switch (screen) {

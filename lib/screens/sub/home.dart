@@ -26,42 +26,44 @@ class _HomeState extends State<Home> {
         shadowColor: Colors.transparent,
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Txt(
-                text: "Home",
-                size: 20,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Flexible(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  decoration: const BoxDecoration(
-                      color: Color.fromRGBO(15, 34, 63, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Color.fromARGB(167, 255, 191, 0),
-                        child: Icon(
-                          Icons.search,
-                          color: Color.fromARGB(255, 235, 235, 235),
-                        ),
-                      ),
-                      Flexible(
-                          child: Input(
-                        hint: "Search (P2P)",
-                        controller: searchValue,
-                      )),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+          child: Row(children: [
+            Txt(
+              text: "Welcome, ",
+              size: 23,
+              weight: FontWeight.bold,
+            ),
+            Txt(
+              text: "Abdullahi Sadiq",
+              size: 23,
+              weight: FontWeight.bold,
+            ) // TODO: Change to user's name
+
+            //   Flexible(
+            //     child: Container(
+            //       padding: const EdgeInsets.symmetric(horizontal: 10),
+            //       decoration: const BoxDecoration(
+            //           color: Color.fromRGBO(15, 34, 63, 1),
+            //           borderRadius: BorderRadius.all(Radius.circular(50))),
+            //       child: Row(
+            //         children: [
+            //           CircleAvatar(
+            //             backgroundColor: Color.fromARGB(167, 255, 191, 0),
+            //             child: Icon(
+            //               Icons.search,
+            //               color: Color.fromARGB(255, 235, 235, 235),
+            //             ),
+            //           ),
+            //           Flexible(
+            //               child: Input(
+            //             hint: "Search (P2P)",
+            //             controller: searchValue,
+            //           )),
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ],
+          ]),
         ),
       ),
       body: Container(
