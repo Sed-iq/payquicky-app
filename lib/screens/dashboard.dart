@@ -4,6 +4,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:payquicky/components/baseBtn.dart';
 import 'package:payquicky/components/config.dart';
 import 'package:payquicky/components/input.dart';
+import "package:flutter_animate/flutter_animate.dart";
 import 'package:payquicky/components/txt.dart';
 import 'package:payquicky/screens/sub/home.dart';
 import 'package:payquicky/screens/sub/services.dart';
@@ -70,7 +71,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           Btn(
             title: "Card",
-            icon: MdiIcons.creditCard,
+            icon: BoxIcons.bx_credit_card,
             onPressed: () {
               // TODO: Custom function here
               setState(() {

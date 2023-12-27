@@ -5,6 +5,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:payquicky/components/config.dart';
 import 'package:payquicky/components/input.dart';
 import 'package:payquicky/components/txt.dart';
+import 'package:payquicky/screens/notification.dart';
 
 // Home screen
 class Home extends StatefulWidget {
@@ -113,7 +114,12 @@ class _HomeState extends State<Home> {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        // TODO: Naviate to notifications
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (BuildContext
+                                                        context) =>
+                                                    Notifications_Screen()));
                                       },
                                       child: CircleAvatar(
                                         radius: 17,
