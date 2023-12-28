@@ -30,13 +30,21 @@ class _SettingsState extends State<Settings> {
                 Row(
                   children: [
                     CircleAvatar(
-                      radius: 40,
+                      radius: 34,
                     ),
                     SizedBox(
                       width: 20,
                     ),
                     Column(
                       children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7),
+                          child: Txt(text: "Id: 0000001"),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7),
+                          child: Txt(text: "Id: 0000001"),
+                        ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 7),
                           child: Txt(text: "Id: 0000001"),
