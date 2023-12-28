@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
 import 'package:payquicky/components/txt.dart';
@@ -31,6 +32,7 @@ class _SettingsState extends State<Settings> {
                   children: [
                     CircleAvatar(
                       backgroundColor: Color.fromARGB(120, 223, 176, 35),
+                      child: Icon(FontAwesome.user_astronaut_solid),
                       radius: 34,
                     ),
                     SizedBox(
