@@ -30,7 +30,9 @@ class _SettingsState extends State<Settings> {
               Ink(
                   width: 50,
                   height: 50,
-                  decoration: BoxDecoration(color: BG_AMBER),
+                  decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.all(Radius.circular(50))),
                   child: Icon(
                     Icons.double_arrow,
                     color: Colors.white,
