@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
 
 class Settings extends StatefulWidget {
@@ -21,7 +22,17 @@ class _SettingsState extends State<Settings> {
             height: 30,
           ),
           Row(
-            children: [],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [],
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.double_arrow,
+                  ))
+            ],
           ),
         ],
       )),
