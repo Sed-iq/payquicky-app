@@ -178,7 +178,8 @@ class _SigninState extends State<Signin> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => Register()));
+                            builder: (BuildContext context) =>
+                                const Register()));
                   },
                   child: Txt(
                     text: "Create a Pay Quicky Account",
