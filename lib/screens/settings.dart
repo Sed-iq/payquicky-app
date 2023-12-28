@@ -39,15 +39,15 @@ class _SettingsState extends State<Settings> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: 7),
+                          padding: EdgeInsets.symmetric(vertical: 4),
                           child: Txt(text: "Id: 0000001"),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: 7),
+                          padding: EdgeInsets.symmetric(vertical: 4),
                           child: Txt(text: "Account Settings"),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: 7),
+                          padding: EdgeInsets.symmetric(vertical: 4),
                           child: Txt(text: "Id: 0000001"),
                         ),
                       ],
