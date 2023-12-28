@@ -31,6 +31,7 @@ class _SettingsState extends State<Settings> {
                   onPressed: () {},
                   icon: Icon(
                     Icons.double_arrow,
+                    color: Colors.white,
                   ))
             ],
           ),
