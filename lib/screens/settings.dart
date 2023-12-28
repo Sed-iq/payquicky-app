@@ -36,9 +36,9 @@ class _SettingsState extends State<Settings> {
                       child: Icon(
                         FontAwesome.user_astronaut_solid,
                         color: Colors.white,
-                      ).animate().scale(),
+                      ),
                       radius: 34,
-                    ),
+                    ).animate().scale(),
                     SizedBox(
                       width: 20,
                     ),
