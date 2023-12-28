@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
+import 'package:payquicky/components/txt.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -27,7 +28,20 @@ class _SettingsState extends State<Settings> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: [],
+                  children: [
+                    CircleAvatar(),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7),
+                          child: Txt(text: "Id: 0000001"),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
                 Ink(
                     width: 50,
