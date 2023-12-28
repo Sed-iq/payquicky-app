@@ -27,13 +27,11 @@ class _SettingsState extends State<Settings> {
               Row(
                 children: [],
               ),
-              IconButton(
-                  onPressed: () {},
-                  style: IconButton.styleFrom(foregroundColor: BG_AMBER),
-                  icon: Icon(
-                    Icons.double_arrow,
-                    color: Colors.white,
-                  ))
+              Ink(
+                  child: Icon(
+                Icons.double_arrow,
+                color: Colors.white,
+              ))
             ],
           ),
         ],
