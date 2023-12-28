@@ -43,7 +43,7 @@ class _SettingsState extends State<Settings> {
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 7),
-                          child: Txt(text: "Id: 0000001"),
+                          child: Txt(text: "Account Settings"),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 7),
