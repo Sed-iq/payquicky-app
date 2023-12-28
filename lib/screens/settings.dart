@@ -28,10 +28,13 @@ class _SettingsState extends State<Settings> {
                 children: [],
               ),
               Ink(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(color: BG_AMBER),
                   child: Icon(
-                Icons.double_arrow,
-                color: Colors.white,
-              ))
+                    Icons.double_arrow,
+                    color: Colors.white,
+                  ))
             ],
           ),
         ],
