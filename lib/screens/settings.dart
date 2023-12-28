@@ -29,7 +29,7 @@ class _SettingsState extends State<Settings> {
               ),
               IconButton(
                   onPressed: () {},
-                  style: IconButton.styleFrom(backgroundColor: BG_AMBER),
+                  style: IconButton.styleFrom(foregroundColor: BG_AMBER),
                   icon: Icon(
                     Icons.double_arrow,
                     color: Colors.white,
