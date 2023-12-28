@@ -32,7 +32,10 @@ class _SettingsState extends State<Settings> {
                   children: [
                     CircleAvatar(
                       backgroundColor: Color.fromARGB(120, 223, 176, 35),
-                      child: Icon(FontAwesome.user_astronaut_solid),
+                      child: Icon(
+                        FontAwesome.user_astronaut_solid,
+                        color: Colors.white,
+                      ),
                       radius: 34,
                     ),
                     SizedBox(
