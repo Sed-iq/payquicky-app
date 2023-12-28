@@ -16,7 +16,14 @@ class _SettingsState extends State<Settings> {
       backgroundColor: BG,
       body: SafeArea(
           child: Column(
-        children: [],
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            children: [],
+          ),
+        ],
       )),
     );
   }
