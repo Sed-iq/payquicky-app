@@ -14,6 +14,10 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: BG,
+      body: SafeArea(
+          child: Column(
+        children: [],
+      )),
     );
   }
 }
