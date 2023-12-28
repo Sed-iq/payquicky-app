@@ -43,17 +43,24 @@ class _SettingsState extends State<Settings> {
                     )
                   ],
                 ),
-                Ink(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(120, 223, 176, 35),
-                        borderRadius: BorderRadius.all(Radius.circular(50))),
-                    child: Icon(
-                      Icons.double_arrow,
-                      color: Colors.white,
-                      size: 15,
-                    ))
+                GestureDetector(
+                  onTap: () {
+                    // TODO: Create a user action here.
+                    // Decide
+                    print("User action");
+                  },
+                  child: Ink(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(120, 223, 176, 35),
+                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                      child: Icon(
+                        Icons.double_arrow,
+                        color: Colors.white,
+                        size: 15,
+                      )),
+                )
               ],
             ),
           ],
