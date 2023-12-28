@@ -36,6 +36,7 @@ class _SettingsState extends State<Settings> {
                       width: 20,
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 7),
