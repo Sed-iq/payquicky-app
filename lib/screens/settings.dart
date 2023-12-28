@@ -31,7 +31,7 @@ class _SettingsState extends State<Settings> {
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                      color: Colors.amber,
+                      color: Color.fromARGB(120, 223, 176, 35),
                       borderRadius: BorderRadius.all(Radius.circular(50))),
                   child: Icon(
                     Icons.double_arrow,
