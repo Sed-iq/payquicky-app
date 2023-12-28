@@ -29,7 +29,9 @@ class _SettingsState extends State<Settings> {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(),
+                    CircleAvatar(
+                      radius: 40,
+                    ),
                     SizedBox(
                       width: 20,
                     ),
