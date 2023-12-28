@@ -19,7 +19,7 @@ class _SettingsState extends State<Settings> {
           child: Column(
         children: [
           SizedBox(
-            height: 30,
+            height: 40,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
