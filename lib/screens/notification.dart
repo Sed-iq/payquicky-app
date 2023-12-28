@@ -27,7 +27,7 @@ class _Notifications_ScreenState extends State<Notifications_Screen> {
               weight: FontWeight.bold,
             ),
             SizedBox(
-              height: 3,
+              height: 1,
             ),
             Divider(
               thickness: 2,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
               weight: FontWeight.bold,
             ),
             Txt(
-              text: "Abdullahi Sadiq",
+              text: "Jaden",
               size: 23,
               weight: FontWeight.bold,
             ) // TODO: Change to user's name
@@ -97,8 +98,14 @@ class _HomeState extends State<Home> {
                                   children: [
                                     GestureDetector(
                                       onTap: () {
-                                        // TODO: qr code scan fxn
-                                        print("Scan");
+                                        showDialog(
+                                            context: context,
+                                            builder: (BuildContext context) =>
+                                                QrCodeScan().animate().slideY(
+                                                    begin: 0.7,
+                                                    end: 0,
+                                                    duration: Duration(
+                                                        milliseconds: 150)));
                                       },
                                       child: CircleAvatar(
                                         radius: 17,
@@ -255,6 +262,139 @@ class _HomeState extends State<Home> {
             ],
           )),
     );
+  }
+
+  // Widget QrCodeScan() {
+
+  // }
+}
+
+class QrCodeScan extends StatefulWidget {
+  const QrCodeScan({super.key});
+
+  @override
+  State<QrCodeScan> createState() => _QrCodeScanState();
+}
+
+class _QrCodeScanState extends State<QrCodeScan> {
+  int screen = 1;
+  Color btnColor(int id) {
+    if (screen == id) {
+      return Colors.amber;
+    } else {
+      return Colors.white;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+            height: 560,
+            padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+            decoration: const BoxDecoration(
+                color: Color.fromRGBO(66, 100, 150, 0.699),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40))),
+            child: Column(
+              children: [
+                Divider(
+                  color: Colors.grey[300],
+                  thickness: 3,
+                  endIndent: 180,
+                  indent: 180,
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          TextButton(
+                              onPressed: () => setState(() {
+                                    screen = 1;
+                                  }),
+                              child: Txt(
+                                text: "My Code",
+                                size: 19.3,
+                                colors: btnColor(1),
+                                weight: FontWeight.w600,
+                              )),
+                          TextButton(
+                              onPressed: () => setState(() {
+                                    screen = 2;
+                                  }),
+                              child: Txt(
+                                text: "Scan Code",
+                                size: 19.3,
+                                colors: btnColor(2),
+                                weight: FontWeight.w600,
+                              )),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      render()
+                    ],
+                  ),
+                )
+              ],
+            )));
+  }
+
+  Widget render() {
+    switch (screen) {
+      case 1:
+        return Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Txt(
+                text: "Jaden's Account",
+                size: 23,
+                weight: FontWeight.w700,
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Txt(
+                text: "Pay quicky account",
+                colors: Colors.grey,
+                weight: FontWeight.w700,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Icon(
+                BoxIcons.bx_qr,
+                color: Colors.white,
+                size: 100,
+              ), //TODO: Icon here is a placeholder change to image gotten
+              SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(backgroundColor: BG_AMBER),
+                  child: Txt(
+                    size: 17,
+                    weight: FontWeight.w600,
+                    text: "Share code",
+                    colors: Color.fromARGB(255, 245, 252, 255),
+                  ))
+            ],
+          ),
+        );
+
+      default:
+        return Container();
+    }
   }
 }
 
