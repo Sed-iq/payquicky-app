@@ -6,6 +6,7 @@ import 'package:payquicky/components/config.dart';
 import 'package:payquicky/components/input.dart';
 import "package:flutter_animate/flutter_animate.dart";
 import 'package:payquicky/components/txt.dart';
+import 'package:payquicky/screens/settings.dart';
 import 'package:payquicky/screens/sub/home.dart';
 import 'package:payquicky/screens/sub/services.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -26,6 +27,8 @@ class _DashboardState extends State<Dashboard> {
         return const Home();
       case 2:
         return const Services();
+      case 4:
+        return const Settings();
       default:
         return const Home();
     }
