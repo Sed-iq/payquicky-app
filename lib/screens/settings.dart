@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
@@ -35,7 +36,7 @@ class _SettingsState extends State<Settings> {
                       child: Icon(
                         FontAwesome.user_astronaut_solid,
                         color: Colors.white,
-                      ),
+                      ).animate().scale(),
                       radius: 34,
                     ),
                     SizedBox(
