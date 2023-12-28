@@ -44,7 +44,11 @@ class _SettingsState extends State<Settings> {
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 4),
-                          child: Txt(text: "Account Settings"),
+                          child: Txt(
+                            text: "Account Settings",
+                            weight: FontWeight.bold,
+                            size: 21.1,
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 4),
