@@ -62,14 +62,16 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             children: [
                               Container(
+                                  decoration: BoxDecoration(
+                                      color: Color.fromRGBO(15, 34, 63, 1)),
                                   // style: TextButton.styleFrom(
                                   //     backgroundColor:
-                                  //         Color.fromRGBO(15, 34, 63, 1)),
+                                  //         ),
                                   child: Txt(
-                                text: "Unverified account",
-                                size: 12,
-                                weight: FontWeight.bold,
-                              )),
+                                    text: "Unverified account",
+                                    size: 12,
+                                    weight: FontWeight.bold,
+                                  )),
                               SizedBox(
                                 width: 12,
                               ),
