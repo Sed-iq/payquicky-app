@@ -58,7 +58,7 @@ class _SettingsState extends State<Settings> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(0),
+                          padding: EdgeInsets.symmetric(vertical: 4),
                           child: Row(
                             children: [
                               Container(
