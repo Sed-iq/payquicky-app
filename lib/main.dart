@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:payquicky/screens/dashboard.dart";
-// import "package:payquicky/screens/register.dart";
-// import "package:payquicky/screens/homescreen.dart";
-// import "package:payquicky/screens/signin.dart";
+//import "package:payquicky/screens/register.dart";
+//import "package:payquicky/screens/homescreen.dart";
+//import "package:payquicky/screens/signin.dart";
 
 void main() {
   runApp(const App());
