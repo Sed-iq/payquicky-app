@@ -64,6 +64,8 @@ class _SettingsState extends State<Settings> {
                               Container(
                                   padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(20)),
                                       color: Color.fromRGBO(15, 34, 63, 1)),
                                   // style: TextButton.styleFrom(
                                   //     backgroundColor:
