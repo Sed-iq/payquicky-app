@@ -71,6 +71,16 @@ class _SettingsState extends State<Settings> {
                                     size: 12,
                                     weight: FontWeight.bold,
                                   )),
+                              TextButton(
+                                  onPressed: () {},
+                                  style: TextButton.styleFrom(
+                                      backgroundColor:
+                                          Color.fromRGBO(15, 34, 63, 1)),
+                                  child: Txt(
+                                    text: "Verify Accout",
+                                    size: 12,
+                                    weight: FontWeight.bold,
+                                  )),
                             ],
                           ),
                         ),
