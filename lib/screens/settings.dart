@@ -75,12 +75,12 @@ class _SettingsState extends State<Settings> {
                                     size: 12,
                                     weight: FontWeight.bold,
                                   )),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               Container(
-                                  padding: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: const BoxDecoration(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(5)),
                                       color: Color.fromRGBO(15, 34, 63, 1)),
