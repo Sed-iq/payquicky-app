@@ -31,14 +31,23 @@ class _SettingsState extends State<Settings> {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Color.fromARGB(120, 223, 176, 35),
-                      child: Icon(
-                        FontAwesome.user_astronaut_solid,
-                        color: Colors.white,
-                      ),
-                      radius: 34,
-                    ).animate().scale(),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext $context) {
+                              return Stack();
+                            });
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: Color.fromARGB(120, 223, 176, 35),
+                        child: Icon(
+                          FontAwesome.user_astronaut_solid,
+                          color: Colors.white,
+                        ),
+                        radius: 34,
+                      ).animate().scale(),
+                    ),
                     SizedBox(
                       width: 20,
                     ),

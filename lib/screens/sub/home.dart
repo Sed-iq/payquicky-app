@@ -100,12 +100,9 @@ class _HomeState extends State<Home> {
                                       onTap: () {
                                         showDialog(
                                             context: context,
-                                            builder: (BuildContext context) =>
-                                                QrCodeScan().animate().slideY(
-                                                    begin: 0.7,
-                                                    end: 0,
-                                                    duration: Duration(
-                                                        milliseconds: 150)));
+                                            builder: (BuildContext context) {
+                                              return const QrCodeScan();
+                                            });
                                       },
                                       child: CircleAvatar(
                                         radius: 17,
@@ -278,6 +275,7 @@ class QrCodeScan extends StatefulWidget {
 
 class _QrCodeScanState extends State<QrCodeScan> {
   int screen = 1;
+  bool animatePop = false;
   Color btnColor(int id) {
     if (screen == id) {
       return Colors.amber;
@@ -286,66 +284,82 @@ class _QrCodeScanState extends State<QrCodeScan> {
     }
   }
 
+  Future<bool> _onPop() async {
+    setState(
+      () {
+        animatePop = true;
+      },
+    );
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-            height: 560,
-            padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(66, 100, 150, 0.699),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40))),
-            child: Column(
-              children: [
-                Divider(
-                  color: Colors.grey[300],
-                  thickness: 3,
-                  endIndent: 180,
-                  indent: 180,
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+    return WillPopScope(
+      onWillPop: _onPop,
+      child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                  height: 560,
+                  padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                  decoration: const BoxDecoration(
+                      color: Color.fromRGBO(66, 100, 150, 0.699),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40))),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          TextButton(
-                              onPressed: () => setState(() {
-                                    screen = 1;
-                                  }),
-                              child: Txt(
-                                text: "My Code",
-                                size: 19.3,
-                                colors: btnColor(1),
-                                weight: FontWeight.w600,
-                              )),
-                          TextButton(
-                              onPressed: () => setState(() {
-                                    screen = 2;
-                                  }),
-                              child: Txt(
-                                text: "Scan Code",
-                                size: 19.3,
-                                colors: btnColor(2),
-                                weight: FontWeight.w600,
-                              )),
-                        ],
+                      Divider(
+                        color: Colors.grey[300],
+                        thickness: 3,
+                        endIndent: 180,
+                        indent: 180,
                       ),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      render()
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 20),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                TextButton(
+                                    onPressed: () => setState(() {
+                                          screen = 1;
+                                        }),
+                                    child: Txt(
+                                      text: "My Code",
+                                      size: 19.3,
+                                      colors: btnColor(1),
+                                      weight: FontWeight.w600,
+                                    )),
+                                TextButton(
+                                    onPressed: () => setState(() {
+                                          screen = 2;
+                                        }),
+                                    child: Txt(
+                                      text: "Scan Code",
+                                      size: 19.3,
+                                      colors: btnColor(2),
+                                      weight: FontWeight.w600,
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            render()
+                          ],
+                        ),
+                      )
                     ],
-                  ),
-                )
-              ],
-            )));
+                  )))
+          .animate()
+          .slideY(begin: 0.7, end: 0, duration: Duration(milliseconds: 150))
+          .animate(target: animatePop == true ? 1 : 0)
+          .slideY(begin: 0, end: 1.3),
+    );
   }
 
   Widget render() {

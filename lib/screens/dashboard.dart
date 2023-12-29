@@ -6,7 +6,7 @@ import 'package:payquicky/components/config.dart';
 import 'package:payquicky/components/input.dart';
 import "package:flutter_animate/flutter_animate.dart";
 import 'package:payquicky/components/txt.dart';
-import 'package:payquicky/screens/settings.dart';
+import 'package:payquicky/screens/sub/settings.dart';
 import 'package:payquicky/screens/sub/home.dart';
 import 'package:payquicky/screens/sub/services.dart';
 import 'package:icons_plus/icons_plus.dart';
