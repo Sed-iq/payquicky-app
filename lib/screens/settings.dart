@@ -71,6 +71,9 @@ class _SettingsState extends State<Settings> {
                                     size: 12,
                                     weight: FontWeight.bold,
                                   )),
+                              SizedBox(
+                                width: 12,
+                              ),
                               TextButton(
                                   onPressed: () {},
                                   style: TextButton.styleFrom(
