@@ -65,7 +65,7 @@ class _SettingsState extends State<Settings> {
                                   padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
+                                          BorderRadius.all(Radius.circular(5)),
                                       color: Color.fromRGBO(15, 34, 63, 1)),
                                   // style: TextButton.styleFrom(
                                   //     backgroundColor:
@@ -75,9 +75,20 @@ class _SettingsState extends State<Settings> {
                                     size: 12,
                                     weight: FontWeight.bold,
                                   )),
-                              SizedBox(
-                                width: 12,
-                              ),
+                              Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      color: Color.fromRGBO(15, 34, 63, 1)),
+                                  // style: TextButton.styleFrom(
+                                  //     backgroundColor:
+                                  //         ),
+                                  child: Txt(
+                                    text: "Unverified account",
+                                    size: 12,
+                                    weight: FontWeight.bold,
+                                  )),
                             ],
                           ),
                         ),
