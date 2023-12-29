@@ -75,6 +75,9 @@ class _SettingsState extends State<Settings> {
                                     size: 12,
                                     weight: FontWeight.bold,
                                   )),
+                              SizedBox(
+                                width: 8,
+                              ),
                               Container(
                                   padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
