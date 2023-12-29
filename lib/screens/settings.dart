@@ -62,6 +62,7 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             children: [
                               Container(
+                                  padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       color: Color.fromRGBO(15, 34, 63, 1)),
                                   // style: TextButton.styleFrom(
@@ -75,16 +76,6 @@ class _SettingsState extends State<Settings> {
                               SizedBox(
                                 width: 12,
                               ),
-                              TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                      backgroundColor:
-                                          Color.fromRGBO(15, 34, 63, 1)),
-                                  child: Txt(
-                                    text: "Verify Accout",
-                                    size: 12,
-                                    weight: FontWeight.bold,
-                                  )),
                             ],
                           ),
                         ),
