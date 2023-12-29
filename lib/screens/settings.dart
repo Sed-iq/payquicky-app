@@ -88,7 +88,7 @@ class _SettingsState extends State<Settings> {
                                   //     backgroundColor:
                                   //         ),
                                   child: Txt(
-                                    text: "",
+                                    text: "Verify Account",
                                     size: 12,
                                     weight: FontWeight.bold,
                                   )),
