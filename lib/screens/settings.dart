@@ -20,8 +20,8 @@ class _SettingsState extends State<Settings> {
       backgroundColor: BG,
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 23),
-        child: Column(
+        padding: const EdgeInsets.only(right: 18, left: 18),
+        child: ListView(
           children: [
             SizedBox(
               height: 40,
@@ -119,9 +119,166 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Options(
+                      title: "Action Required",
+                      icon: FontAwesome.circle_exclamation_solid,
+                      description:
+                          "You are required to complete identity verification to access to PayQuicky services",
+                      bg: Color.fromARGB(61, 223, 176, 35),
+                    ).animate().shakeX(
+                        curve: Curves.ease, delay: Duration(milliseconds: 350)),
+                  ),
+                  Divider(
+                    color: Color.fromRGBO(66, 100, 151, 1),
+                    thickness: 2,
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 90),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Options(
+                            title: "General Settings",
+                            description:
+                                "Change Theme and Notification settings."),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Divider(
+                          thickness: 2.4,
+                          color: Color.fromRGBO(66, 100, 151, 1),
+                          indent: 80,
+                          endIndent: 80,
+                        )
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Options(
+                            title: "Security Settings",
+                            description: "Update pin and passwords."),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Divider(
+                          thickness: 2.4,
+                          color: Color.fromRGBO(66, 100, 151, 1),
+                          indent: 80,
+                          endIndent: 80,
+                        )
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Options(
+                            title: "Rate Alert Settings",
+                            description: "View and Update rate alerts."),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Divider(
+                          thickness: 2.4,
+                          color: Color.fromRGBO(66, 100, 151, 1),
+                          indent: 80,
+                          endIndent: 80,
+                        )
+                      ],
+                    ),
+                  ),
+                  Options(
+                      title: "Service Status",
+                      description: "Available and unavailable services."),
+                ],
+              ),
+            ),
           ],
         ),
       )),
+    );
+  }
+}
+
+class Options extends StatelessWidget {
+  final Color? bg;
+  final String title;
+  final String description;
+  final IconData? icon;
+  const Options(
+      {super.key,
+      required this.title,
+      required this.description,
+      this.bg,
+      this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+      decoration: BoxDecoration(
+          color: bg ?? const Color.fromRGBO(15, 34, 63, 1),
+          borderRadius: const BorderRadius.all(Radius.circular(10))),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Builder(builder: (BuildContext cont) {
+            if (icon != null) {
+              return Icon(icon, color: Colors.amber, size: 19);
+            } else {
+              return Container();
+            }
+          }),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Txt(
+                    text: title,
+                    size: 18,
+                    weight: FontWeight.bold,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    description,
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Icon(
+            Icons.double_arrow,
+            color: Colors.white,
+          )
+        ],
+      ),
     );
   }
 }

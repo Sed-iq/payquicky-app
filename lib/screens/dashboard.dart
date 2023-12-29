@@ -34,16 +34,23 @@ class _DashboardState extends State<Dashboard> {
     }
   }
 
+  Future<bool> _onPop() async {
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     final searchValue = TextEditingController();
     return Scaffold(
       backgroundColor: BG,
-      body: Stack(
-        children: [
-          render(context),
-          Align(alignment: Alignment.bottomCenter, child: BaseNav())
-        ],
+      body: WillPopScope(
+        onWillPop: _onPop,
+        child: Stack(
+          children: [
+            render(context),
+            Align(alignment: Alignment.bottomCenter, child: BaseNav())
+          ],
+        ),
       ),
     );
   }
