@@ -59,7 +59,15 @@ class _SettingsState extends State<Settings> {
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 4),
-                          child: Txt(text: "Id: 0000001"),
+                          child: Row(
+                            children: [
+                              TextButton(
+                                  onPressed: () {},
+                                  child: Txt(
+                                    text: "Unverified account",
+                                  )),
+                            ],
+                          ),
                         ),
                       ],
                     )
