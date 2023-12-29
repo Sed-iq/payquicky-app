@@ -58,7 +58,7 @@ class _SettingsState extends State<Settings> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: 1),
+                          padding: EdgeInsets.all(0),
                           child: Row(
                             children: [
                               TextButton(
@@ -68,6 +68,7 @@ class _SettingsState extends State<Settings> {
                                           Color.fromRGBO(15, 34, 63, 1)),
                                   child: Txt(
                                     text: "Unverified account",
+                                    size: 12,
                                   )),
                             ],
                           ),
