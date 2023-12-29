@@ -18,22 +18,10 @@ class _Notifications_ScreenState extends State<Notifications_Screen> {
       appBar: AppBar(
         backgroundColor: BG,
         shadowColor: Colors.transparent,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Txt(
-              text: "Notifications",
-              size: 23,
-              weight: FontWeight.bold,
-            ),
-            SizedBox(
-              height: 1,
-            ),
-            Divider(
-              thickness: 2,
-              color: Colors.blueGrey,
-            )
-          ],
+        title: Txt(
+          text: "Notifications",
+          size: 23,
+          weight: FontWeight.bold,
         ),
       ),
       body: Center(

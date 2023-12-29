@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
+import 'package:payquicky/components/input.dart';
 import 'package:payquicky/components/txt.dart';
 
 class Settings extends StatefulWidget {
@@ -35,9 +36,8 @@ class _SettingsState extends State<Settings> {
                       onTap: () {
                         showDialog(
                             context: context,
-                            builder: (BuildContext $context) {
-                              return Stack();
-                            });
+                            builder: (BuildContext context) =>
+                                const UserModal());
                       },
                       child: CircleAvatar(
                         backgroundColor: Color.fromARGB(120, 223, 176, 35),
@@ -287,6 +287,104 @@ class Options extends StatelessWidget {
             color: Colors.white,
           )
         ],
+      ),
+    );
+  }
+}
+
+class UserModal extends StatefulWidget {
+  const UserModal({super.key});
+
+  @override
+  State<UserModal> createState() => _UserModalState();
+}
+
+class _UserModalState extends State<UserModal> {
+  bool animatePop = false;
+  Future<bool> _onPop() async {
+    setState(() {
+      animatePop = true;
+    });
+    return true;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: _onPop,
+      child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                  height: 700,
+                  padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                  decoration: const BoxDecoration(
+                      color: Color.fromRGBO(110, 154, 221, 0.842),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40))),
+                  child: Column(
+                    children: [
+                      Divider(
+                        color: Colors.grey[300],
+                        thickness: 3,
+                        endIndent: 180,
+                        indent: 180,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 30),
+                        child: Column(
+                          children: [
+                            Txt(
+                              text: "Profile Detail",
+                              colors: Color.fromARGB(255, 0, 13, 40),
+                              size: 34,
+                              weight: FontWeight.bold,
+                            ),
+                            Divider(
+                              thickness: 1.4,
+                              color: BG,
+                              indent: 150,
+                              endIndent: 150,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 25),
+                              child: CircleAvatar(
+                                backgroundColor: BG_AMBER,
+                                radius: 50,
+                                child: Brand(
+                                  Brands.human_torch,
+                                  size: 40,
+                                ),
+                              ),
+                            ),
+                            //TODO: Photo uploading functionality
+                            ModalInput()
+                          ],
+                        ),
+                      ),
+                    ],
+                  )))
+          .animate()
+          .slideY(begin: 0.7, end: 0, duration: Duration(milliseconds: 150))
+          .animate(target: animatePop == true ? 1 : 0)
+          .slideY(begin: 0, end: 1.3),
+    );
+  }
+}
+
+class ModalInput extends StatelessWidget {
+  // For popup
+  const ModalInput({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 30),
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      decoration: BoxDecoration(
+          color: const Color.fromARGB(150, 255, 193, 7),
+          borderRadius: const BorderRadius.all(Radius.circular(14))),
+      child: Row(
+        children: [],
       ),
     );
   }

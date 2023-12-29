@@ -4,7 +4,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:payquicky/components/config.dart';
-import 'package:payquicky/components/input.dart';
 import 'package:payquicky/components/txt.dart';
 import 'package:payquicky/screens/notification.dart';
 
