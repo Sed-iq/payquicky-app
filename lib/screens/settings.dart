@@ -69,6 +69,7 @@ class _SettingsState extends State<Settings> {
                                   child: Txt(
                                     text: "Unverified account",
                                     size: 12,
+                                    weight: FontWeight.bold,
                                   )),
                             ],
                           ),
